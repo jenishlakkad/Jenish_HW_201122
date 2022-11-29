@@ -9,6 +9,7 @@ public class FaceBookPage extends Utils
     public void toGoOnFaceBookPage()
     {
         //Method to go on next tab and come back to parent tab
+      //  waitForUrlToBe("https://www.facebook.com/nopCommerce",5);
 
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));

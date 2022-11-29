@@ -116,6 +116,20 @@ public class HomePage extends Utils
         //click on element function to click on " _macBook "
     }
 
+//    ------------------------------------------------------------------------------------------------------
+
+    public void clickOnSearchBar()
+    {
+        clickOnElementFunction(By.id("small-searchterms"));
+        sendText(By.id("small-searchterms"),"nike");
+        clickOnElementFunction(By.xpath("//button[@class=\"button-1 search-box-button\"]"));
+    }
+
+    public void hoverOnComputer(){
+        hoverAction2(By.xpath("//ul[@class=\"top-menu notmobile\"]/li/a[@href=\"/computers\"]"));
+        clickOnElementFunction(By.xpath("//ul[@class=\"top-menu notmobile\"]/li/ul[@class=\"sublist first-level\"]//a[@href=\"/desktops\"]"));
+
+    }
 
 
 }

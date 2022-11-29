@@ -2,6 +2,7 @@ package org.example;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -60,7 +61,7 @@ public class Utils extends BaseFile
         //commanding to driver to wait
     }
 
-    public void hover(By xpath)
+    public void hoverAction(By xpath)
     {
         //Method to hover actions
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -68,6 +69,16 @@ public class Utils extends BaseFile
 
         js.executeScript("window.scrollBy(0,370)", "");
     }
+    public void hoverAction2(By by){
+        WebElement ele = driver.findElement(by);
+
+//Creating object of an Actions class
+        Actions action = new Actions(driver);
+
+//Performing the mouse hover action on the target element.
+        action.moveToElement(ele).perform();
+    }
+
     public void selectFromDropdownByVisibleText(By by,String a)
     {
         //Method to Dropdown by locator 'Visible Text'
@@ -99,7 +110,7 @@ public class Utils extends BaseFile
         //Call getScreenshotAs method to create image file
         File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
          //Move image file to new destination
-        File DestFile=new File("Jenish_HW_201122\\src\\ScreenShorts"+screenShortName+getTimeStamp()+".jpg");
+        File DestFile=new File("src/ScreenShorts/"+screenShortName+getTimeStamp()+".jpg");
         //Copy file at destination
         try
         {

@@ -22,12 +22,12 @@ public class EmailAFriend extends Utils
     Assert.assertEquals("https://demo.nopcommerce.com/productemailafriend/4",driver.getCurrentUrl());
          //Using the Assert to verify the URL
 
-     sendText(_friendEmail,"black@gmail.com");
+     sendText(_friendEmail,LoadProp.getProperty("friendEmail"));
          //Calling sentText function to write on text Field
-     sendText(_yourEmail,"");
+     sendText(_yourEmail,LoadProp.getProperty("yourEmail"));
         //Calling sentText function to write on text Field
 
-     sendText(_personalMessage,"Hello Everyone");
+     sendText(_personalMessage,LoadProp.getProperty("personalMessage"));
         //Calling sentText function to write on text Field
 
      clickOnElementFunction(_sendEmail);
