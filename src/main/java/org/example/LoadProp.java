@@ -16,21 +16,26 @@ public class LoadProp
     static FileInputStream input;
 
     public static String getProperty(String key) {
+
         prop = new Properties();
         try {
 //            input = new FileInputStream(propertiesFileLocation + propertiesFileName);
             input = new FileInputStream("src/test/java/TestConfig/TestData.properties");
+            //assigning the path
             prop.load(input);
             input.close();
         } catch (IOException e) {
+            //catch block
             e.printStackTrace();
         }
         return prop.getProperty(key);
+        //Returning the value
 
     }
 
-    @Test
-    public void readKeys() {
+    @Test public void readKeys()
+    {
+        //Testcase to test the above method is working or not
         System.out.println(getProperty("url"));
         System.out.println(getProperty("FirstName"));
     }

@@ -120,15 +120,24 @@ public class HomePage extends Utils
 
     public void clickOnSearchBar()
     {
+        //Method to click on Search bar
         clickOnElementFunction(By.id("small-searchterms"));
+        //click on element function to click on "search bar "
         sendText(By.id("small-searchterms"),"nike");
+        //calling sendText function to type
         clickOnElementFunction(By.xpath("//button[@class=\"button-1 search-box-button\"]"));
+        //click on element function to click on "search button "
     }
+    //    ------------------------------------------------------------------------------------------------------
+
 
     public void hoverOnComputer(){
         hoverAction2(By.xpath("//ul[@class=\"top-menu notmobile\"]/li/a[@href=\"/computers\"]"));
+        //Function to hover on element
         clickOnElementFunction(By.xpath("//ul[@class=\"top-menu notmobile\"]/li/ul[@class=\"sublist first-level\"]//a[@href=\"/desktops\"]"));
-
+        //click on element function to click on "Desktops "
+        toVerifyColourByCss(By.tagName("a"));
+        //Calling toVerifyColourByCss to verify colour
     }
 
 

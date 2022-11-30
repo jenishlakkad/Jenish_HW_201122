@@ -3,6 +3,7 @@ package org.example;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -159,6 +160,19 @@ public class Utils extends BaseFile
         }   // catch
     }   // isAlertPresent()
 
+    public void toVerifyColourByCss(By by)
+    {
+        //WebElement t = driver.findElement(By.tagName("h1"));
+        WebElement t = driver.findElement(by);
+
+        //obtain color in rgba
+        String s = t.getCssValue("color");
+        // convert rgba to hex
+        String c = Color.fromString(s).asHex();
+        System.out.println("Color is :" + s);
+        System.out.println("Hex code for color:" + c);
+
+    }
 
 
 }

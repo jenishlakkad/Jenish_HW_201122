@@ -25,7 +25,8 @@ public class TestSuit extends BaseTest
     SearchNikePage searchNikePage= new SearchNikePage();
     //Object of SearchNikePage class
 
-    DesktopsPage desktopsPage=new DesktopsPage();
+     DesktopsPage desktopsPage=new DesktopsPage();
+    //Object of DesktopsPage class
 
    @Test public void toVerifyUserShouldSeeSelectedCurrency()
    {
@@ -99,10 +100,13 @@ public class TestSuit extends BaseTest
    searchNikePage.verifyNikeText();
        //calling method from searchNikePage
    }
-   @Test public void xyz()
+   @Test public void toVerifyTheColorOfTextAfterHoveringOnIt()
    {
        homePage.hoverOnComputer();
+       //calling method from homePage
+
        desktopsPage.verifyUrl();
+       //calling method from desktopsPage
 
    }
 

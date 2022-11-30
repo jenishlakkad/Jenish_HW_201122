@@ -13,25 +13,29 @@ import java.util.HashMap;
 
 public class DriverManager extends Utils {
     public static final String USERNAME = LoadProp.getProperty("BROWSERSTACK_USERNAME");
+    //Storing the Username from Browserstack in USERNAME
     public static final String AUTOMATE_KEY = LoadProp.getProperty("BROWSERSTACK_ACCESS_KEY");
+    //Storing the password from Browserstack in AUTOMATE_KEY
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    //Storing Url of browserstack in URL
     String browserName = LoadProp.getProperty("browser");
     //    String browserName = System.getProperty("browser");
     boolean runIncloud = Boolean.parseBoolean(LoadProp.getProperty("cloud"));
     MutableCapabilities capabilities = new MutableCapabilities();
 
 
-    public void openBrowser() {// Method to open Browser
+    public void openBrowser()
+    {// Method to open Browser
 
         //run in cloud=====================================================================================================
-        if (runIncloud) {
-
+        if (runIncloud)
+        {
             System.out.println("Running in the Cloud");
             //Connect to cloud
 
             if (browserName.equalsIgnoreCase("Edge"))
             {
-                ///connect with browserstack
+                ///connect with browserstack and seating the OS,Version,Browser,etc.
                 capabilities.setCapability("browserName", "Edge");
                 capabilities.setCapability("browserVersion", "106.0");
                 HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
@@ -45,7 +49,7 @@ public class DriverManager extends Utils {
 
             else if (browserName.equalsIgnoreCase("Firefox"))
             {
-                ///connect with browserstack
+                ///connect with browserstack and seating the OS,Version,Browser,etc.
                 capabilities.setCapability("browserName", "firefox");
                 capabilities.setCapability("browserVersion", "106.0");
                 HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
@@ -97,6 +101,7 @@ public class DriverManager extends Utils {
                 driver = new FirefoxDriver();
             } else {
                 System.out.println("Your browser name is wrong " + browserName);
+                //Message if the browser name is wrong
             }
 
         }
