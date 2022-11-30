@@ -17,10 +17,10 @@ public class NewReleasePage extends Utils
         Assert.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/nopcommerce-new-release");
         //Using Assert function to verify URL
 
-        sendText(_title,"news comment "+getTimeStamp());
+        sendText(_title,LoadProp.getProperty("titleNews") + getTimeStamp());
         //sentText function to write on page
 
-        sendText(_comment,"Hello kem cho maja ma");
+        sendText(_comment,LoadProp.getProperty("comment"));
         //sentText function to write on page
 
         clickOnElementFunction(_addComment);
@@ -33,6 +33,6 @@ public class NewReleasePage extends Utils
         //Assert to check actual and expected
 
         driver.findElement(By.xpath(" //div[@class=\"comment news-comment\"][last()]"));
-        //Assert.assertEquals( driver.findElement(By.xpath(" //div[@class=\"comment news-comment\"][last()]")));
+//        Assert.assertEquals(driver.findElement(By.xpath(" //div[@class=\"comment news-comment\"][last()]")));
     }
 }

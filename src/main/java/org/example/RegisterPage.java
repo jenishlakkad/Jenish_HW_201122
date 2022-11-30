@@ -45,31 +45,31 @@ public class RegisterPage extends Utils
         clickOnElementFunction(_gender);
         //click function to click on locator
 
-        sendText(_firstName,"Jenish");
+        sendText(_firstName,LoadProp.getProperty("firstName"));
         //sentText function to write on website
 
-        sendText(_lastName,"Lakkad");
+        sendText(_lastName,LoadProp.getProperty("lastName"));
         //sentText function to write on website
 
-        selectFromDropdownByIndex(_date,7);
+        selectFromDropdownByValue(_date,LoadProp.getProperty("dayOfBirth"));
         //select function to select the "date" "locator" from dropdown with help of Index
 
-        selectFromDropdownByValue(_month,"12");
+        selectFromDropdownByValue(_month,LoadProp.getProperty("monthOfBirth"));
         //select function to select the "month" "locator" from dropdown with help of Value
 
-        selectFromDropdownByValue(_year,"2002");
+        selectFromDropdownByValue(_year,LoadProp.getProperty("yearOfBirth"));
         //select function to select the "year" "locator" from dropdown with help of Value
 
-        sendText(_eMail,"jl"+getTimeStamp()+"@gmail.com");
+        sendText(_eMail,LoadProp.getProperty("firstEmailPart") + getTimeStamp() + LoadProp.getProperty("secondEmailPart"));
         //sentText function to write on website
 
-        sendText(_companyName,"LSL");
+        sendText(_companyName,LoadProp.getProperty("companyName"));
         //sentText function to write on website
 
-        sendText(_password,"J123@.");
+        sendText(_password,LoadProp.getProperty("password1"));
         //sentText function to write on website
 
-        sendText(_confirmPassword,"J123@.");
+        sendText(_confirmPassword,LoadProp.getProperty("confirmPassword"));
         //sentText function to write on website
 
         clickOnElementFunction(_registerButton);

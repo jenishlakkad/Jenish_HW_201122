@@ -28,7 +28,7 @@ public class BaseTest extends Utils
             //Calling Method form Utils to take Screen Short
         }
 
-         driverManager.closeBrowser();
+          driverManager.closeBrowser();
         // Using function of close browser to close browser
     }
 

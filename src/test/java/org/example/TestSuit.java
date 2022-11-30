@@ -1,25 +1,32 @@
 package org.example;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestSuit extends BaseTest
 {
    HomePage homePage=new HomePage();
-   //Object of HomePage
+   //Object of HomePage class
    NewReleasePage newReleasePage=new NewReleasePage();
-    //Object of NewReleasePage
+    //Object of NewReleasePage class
    FaceBookPage faceBookPage=new FaceBookPage();
-    //Object of FaceBookPage
+    //Object of FaceBookPage class
    RegisterPage registerPage=new RegisterPage();
    //making registerPage method to use function of RegisterPage class
 
    RegisterCompletePage registerCompletePage=new RegisterCompletePage();
-    //Object of RegisterCompletePage
+    //Object of RegisterCompletePage class
    AppleMacBookPage appleMacBookPage=new AppleMacBookPage();
-    //Object of AppleMacBookPage
+    //Object of AppleMacBookPage class
    EmailAFriend emailAFriend=new EmailAFriend();
-    //Object of EmailAFriend
+    //Object of EmailAFriend class
+
+    SearchNikePage searchNikePage= new SearchNikePage();
+    //Object of SearchNikePage class
+
+     DesktopsPage desktopsPage=new DesktopsPage();
+    //Object of DesktopsPage class
 
    @Test public void toVerifyUserShouldSeeSelectedCurrency()
    {
@@ -28,7 +35,7 @@ public class TestSuit extends BaseTest
        homePage.verifyUsdSymbol();
        //calling method from HomePage
        homePage.verifyEuroSymbol();
-       
+ 
    }
 
   @Test public void toVerifyUserShouldNotAbleToVoteWithoutSelectingExperience()
@@ -83,6 +90,22 @@ public class TestSuit extends BaseTest
 
        emailAFriend.enterDetailsOfEmail();
        //calling method from emailAFriend
+
+   }
+
+   @Test public void toVerifyUserShouldSeeNikeTextInTitleOfProduct(){
+   homePage.clickOnSearchBar();
+       //calling method from homePage
+   searchNikePage.verifyNikeText();
+       //calling method from searchNikePage
+   }
+   @Test public void toVerifyTheColorOfTextAfterHoveringOnIt()
+   {
+       homePage.hoverOnComputer();
+       //calling method from homePage
+
+       desktopsPage.verifyUrl();
+       //calling method from desktopsPage
 
    }
 
