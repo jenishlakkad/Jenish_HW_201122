@@ -35,8 +35,7 @@ public class TestSuit extends BaseTest
        homePage.verifyUsdSymbol();
        //calling method from HomePage
        homePage.verifyEuroSymbol();
-       //Assert.assertEquals(3,2);
-
+ 
    }
 
   @Test public void toVerifyUserShouldNotAbleToVoteWithoutSelectingExperience()
