@@ -38,6 +38,8 @@ public class RegisterPage extends Utils
     //Making the private variable and storing the command of selenium to get Locator by "id"
 
 
+
+
     public void registerDetails()
     {
         //Method to calling all useful functions from "Utils" class

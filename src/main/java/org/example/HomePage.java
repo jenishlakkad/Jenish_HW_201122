@@ -140,5 +140,12 @@ public class HomePage extends Utils
         //Calling toVerifyColourByCss to verify colour
     }
 
+    //------------------------------------------------------------------------------------
+    public void clickOnCetegory(String category_name){
+        clickOnElementFunction(By.linkText(category_name));
+
+
+    }
+
 
 }
