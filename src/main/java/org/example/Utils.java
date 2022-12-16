@@ -7,6 +7,7 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -173,7 +174,26 @@ public class Utils extends BaseFile
         System.out.println("Hex code for color:" + c);
 
     }
+    public void assertUrl1(String category_link){
+        Assert.assertTrue(driver.getCurrentUrl().contains(category_link));
+
+    }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

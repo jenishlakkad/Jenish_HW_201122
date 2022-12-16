@@ -1,5 +1,6 @@
 Feature: As a user, I should able to register
 
+  @regression
   Scenario: I should able to register successfully
     Given I am on homepage
     When I click on register button
@@ -17,6 +18,7 @@ Feature: As a user, I should able to register
     When I enter all required details
     And I click on send email
     Then My email should be send successfully
+
 
 
 
